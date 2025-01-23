@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    background-image: url('/img/slider-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Desativa o efeito de fundo fixo em telas menores */
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDO</title>
+    <link rel="stylesheet" href="/Css/body-main.css">
+    <link rel="stylesheet" href="/Css/button-main.css">
+    <link rel="stylesheet" href="/Css/cabecalho-main.css">
+    <link rel="stylesheet" href="/Css/Inputs-main.css">
+    <link rel="stylesheet" href="/Css/img-main.css">
+    <link rel="stylesheet" href="/Css/media-main.css">
+    <link rel="stylesheet" href="/Css/titulo-main.css"> 
+    <link rel="stylesheet" href="/Css/rodape-main.css">  
+</head>
+<body>
+
+    <div class="container">
+        <form action="/submit" method="POST">
+            <div class="header">
+                <div class="logo-left">
+                    <img src="/img/grupo-espiral-engenharia-logo-e1733830618147.png" alt="Logo Esquerda" class="logo">
+                </div>
+                <h1 id="titulo-formulario">Formulário de Retorno de Atividade</h1>
+                <div class="logo-right">
+                    <img src="/img/03-frase.png" alt="Logo Direita" class="logo">
+                </div>
+            </div>
+                    
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+
+            <label for="meses">Mês:</label>
+            <select id="meses"></select>
+
+            <label for="semana">Semana:</label>
+            <select id="semana"></select>
+
+            <label for="site">Site/Mina:</label>
+            <select id="minas"></select>
+
+            <label for="equipamento">Equipamento:</label>
+            <input type="text" id="equipamento" name="equipamento" oninput="this.value = this.value.toUpperCase()" placeholder="Exemplo: TAG:" required>
+
+            <label for="om">OM:</label>
+            <select id="om" required>
+            <option value="">Selecione...</option>
+            <option value="om">Ordem de Serviço (12 dígitos)</option>
+            <option value="forms">Forms</option>
+            </select>
+
+            <div id="om-input-container" style="display: none;">
+            <label id="input-title" for="om-input">Digite a Ordem de Serviço</label>
+            <input type="text" id="om-input" placeholder="Digite aqui" required />
+            <span id="error-message" style="color: red; display: none;">Ainda faltam números para completar a Ordem de Serviço.</span>
+            </div>
+
+
+            <label for="descricao">Descrição breve da demanda:</label>
+            <textarea id="descricao" name="descricao" rows="3" oninput="this.value = this.value.toUpperCase()" placeholder="Resuma a demanda..." required></textarea>
+
+            <label for="status">Status:</label>
+            <select id="status"></select>
+
+            <label for="retorno">Retorno:</label>
+            <select id="retorno"></select>
+
+            <label for="tarefa">Tarefa:</label>
+            <select id="tarefa"></select>
+
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" name="observacao" rows="2" oninput="this.value = this.value.toUpperCase()" placeholder="Inclua observações..."></textarea>
+
+            <label for="centro-custo">Centro de custo:</label>
+            <select id="centro"></select>
+            <div id="outros-container" style="display: none;">
+            <label for="outros">Informe o centro de custo:</label>
+            <input type="text" id="outros" placeholder="Digite o centro de custo">
+            </div>
+
+            <label for="qtd-pessoas">Quantidade de pessoas na equipe:</label>
+            <input type="number" id="qtd-pessoas" name="qtd-pessoas" min="1" placeholder="Exemplo: 5" required>
+
+            <label for="horario-disponivel">Horário disponível:</label>
+            <input type="time" id="horario-disponivel" name="horario-disponivel" placeholder="Exemplo: Das 08h às 12h" required>
+
+            <label for="horario-inicio">Horário de início da atividade:</label>
+            <input type="time" id="horario-inicio" name="horario-inicio" required>
+
+            <label for="horario-final">Horário de finalização da atividade:</label>
+            <input type="time" id="horario-final" name="horario-final">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="/js/centro-de-custo-main.js"></script>
+    <script src="/js/img-main.js"></script>
+    <script src="/js/om-main.js"></script>
+    <script src="/js/mes-main.js"></script>
+    <script src="/js/retorno-main.js"></script>
+    <script src="/js/status-main.js"></script>
+    <script src="/js/semana-main.js"></script>
+    <script src="/js/site-mina-main.js"></script>
+    <script src="/js/tarefa-main.js"></script>
+    <script src="/js/titulo-main.js"></script>
+</body>
+<footer class="footer">
+    <p>Em Desinvolvimento por Thalles Bhering Magalhães - 2025</p>
+</footer>
+</html>

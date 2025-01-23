@@ -1,0 +1,144 @@
+/* Ajustando o container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #014864c9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Definindo o layout flexível para o cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease; /* Adicionando transição suave */
+}
+
+/* Ajustando as logos */
+.logo-left, .logo-right {
+    display: flex;
+    align-items: center;
+    position: relative; /* Necessário para o efeito de brilho */
+}
+
+/* Logo esquerda - responsiva */
+.logo-left img {
+    max-width: 100%; /* A logo vai ocupar o máximo de largura possível */
+    height: auto;
+    width: auto;
+    max-width: 150px; /* Definindo um tamanho máximo para evitar que fique muito grande */
+    margin-right: 20px; /* Garantindo a distância do título */
+    transition: transform 0.6s ease; /* Transição suave para o efeito de rotação */
+}
+
+/* Logo direita - responsiva */
+.logo-right img {
+    max-width: 100%; /* A logo vai ocupar o máximo de largura possível */
+    height: auto;
+    width: auto;
+    max-width: 200px; /* Definindo um tamanho máximo para evitar que fique muito grande */
+    transition: transform 0.6s ease, filter 0.4s ease; /* Sincronizando o movimento e o brilho */
+    position: relative; /* Necessário para o efeito de brilho */
+}
+
+/* Efeito de brilho passando da esquerda para a direita na imagem da direita */
+.logo-right.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* Começa fora da imagem */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+    animation: brilho 1.5s forwards; /* Animando o brilho de esquerda para direita */
+}
+
+/* Animação do brilho passando pela imagem */
+@keyframes brilho {
+    100% {
+        left: 100%; /* O brilho vai até a direita */
+    }
+}
+
+/* Efeito de ondulação na imagem da direita */
+.logo-right.move {
+    animation: ondulacao 1s ease-in-out infinite; /* Aplica uma ondulação */
+}
+
+@keyframes ondulacao {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px); /* Aumenta um pouco e sobe */
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Efeito de rotação quando o mouse passa sobre a imagem da esquerda */
+.logo-left img.rotate {
+    transform: rotate(360deg); /* Gira a imagem 360 graus */
+}
+
+/* Ajustando o título centralizado */
+#titulo-formulario {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap; /* Impede a quebra de linha */
+    transition: all 0.3s ease; /* Transição suave para o título */
+}
+
+/* Ajuste para telas menores que 600px */
+@media (max-width: 600px) {
+    .logo-right {
+        display: none; /* Esconde a imagem da direita em telas pequenas */
+    }
+
+    #titulo-formulario {
+        flex-grow: 1;
+        text-align: left; /* Alinha o título à esquerda */
+        font-size: 20px;
+        margin-left: 10px; /* Ajuste a margem para não colar no canto */
+    }
+
+    .logo-left img {
+        margin-right: 20px; /* A imagem da esquerda mantém 20px de distância do título */
+    }
+
+    .header {
+        justify-content: flex-start; /* Ajusta o alinhamento do cabeçalho */
+    }
+}
+
+/* Ajuste para centralizar o título e a imagem quando o título for "RDO" */
+@media (max-width: 800px) {
+    .header.rdo {
+        justify-content: center; /* Centraliza o cabeçalho */
+    }
+
+    .logo-left img {
+        margin-right: 20px; /* Garante a distância de 20px entre a imagem e o título */
+    }
+
+    #titulo-formulario {
+        text-align: center; /* Centraliza o título */
+    }
+}
+
+/* Ajuste para telas maiores que 830px */
+@media (min-width: 830px) {
+    .logo-left img {
+        max-width: 180px;
+    }
+
+    .logo-right img {
+        max-width: 220px;
+    }
+}

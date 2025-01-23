@@ -1,0 +1,28 @@
+/* Estilos para o rodapé */
+.footer {
+    background-color: #014864c9;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+    z-index: 10;
+}
+
+/* Adiciona margem inferior ao conteúdo principal para garantir que o rodapé não sobreponha */
+body {
+    margin-bottom: 60px; /* Ajuste conforme necessário para dar espaço suficiente */
+}
+
+/* Ajustes no conteúdo principal */
+.main-content {
+    padding-bottom: 50px; /* Distância do conteúdo para o rodapé */
+}
+
+/* Estilo do conteúdo (se necessário) */
+.footer p {
+    margin: 0;
+}
